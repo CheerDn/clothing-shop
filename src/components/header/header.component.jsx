@@ -18,6 +18,7 @@ function Header({ currentUser }) {
         <Link className="option" to="/shop">
           Contact
         </Link>
+        {console.log(`${currentUser} Hello`)}
         {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
