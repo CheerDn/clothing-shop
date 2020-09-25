@@ -6,3 +6,15 @@ export const selectCollections = createSelector(
   selectShop,
   shop => shop.collections
 )
+
+export const selectCollectionForPreview = createSelector(
+  selectCollections,
+  collections => Object.keys(collections).map(key => collections[key])
+)
+
+//curried function
+export const selectCollection = collectionUrlParam =>
+  createSelector(
+    selectCollections,
+    collections => collections[collectionUrlParam]
+  )
